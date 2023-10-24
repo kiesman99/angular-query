@@ -1,0 +1,26 @@
+Hello
+
+<!-- <pre>{{res() | json}}</pre> -->
+
+<!-- <ng-container *ngIf="res().data"> -->
+  <table>
+    <thead>
+      <th>ID</th>
+      <th>User ID</th>
+      <th>title</th>
+      <th>body</th>
+    </thead>
+    <tbody>
+      @for (post of posts().data; track post.id) {
+        <tr>
+          <td><a [routerLink]="['/posts', post.id]">{{post.id}}</a></td>
+          <td>{{post.userId}}</td>
+          <td>{{post.title}}</td>
+          <td>{{post.body}}</td>
+        </tr>
+      } @empty {
+        <p>No Data</p>
+      }
+    </tbody>
+  </table>
+<!-- </ng-container> -->
